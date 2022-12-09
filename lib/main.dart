@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_flutter/src/pages/alert_page.dart';
 import 'package:widgets_flutter/src/routes/rutas.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 //import 'package:widgets_flutter/src/pages/home_pages.dart';
 //import 'package:widgets_flutter/src/pages/home_pages_p1.dart';
@@ -17,6 +18,15 @@ import 'package:widgets_flutter/src/routes/rutas.dart';
      // ignore: prefer_const_constructors
      return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+    GlobalMaterialLocalizations.delegate,
+    GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
+  ],
+    supportedLocales: [
+    Locale('en', 'US'), // English, no country code
+    Locale('es', 'ES'), // Spanish, no country code
+  ],
        title: 'Componentes',
       // home:  HomePages(), 
       initialRoute:  '/',

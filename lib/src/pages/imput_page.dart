@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 
+
 class ImputPage extends StatefulWidget {
 
 
@@ -165,6 +166,7 @@ class _ImputPageState extends State<ImputPage> {
       initialDate: new DateTime.now(),
       firstDate: new DateTime(2014),
       lastDate: new DateTime(2025),
+      locale: Locale("es","ES")
     );
     if(picked != null){
       setState(() {
