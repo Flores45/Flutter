@@ -7,6 +7,7 @@ import '../pages/alert_page.dart';
 import '../pages/avatar_page.dart';
 import '../pages/card_page.dart';
 import '../pages/home_page_f.dart';
+import '../pages/imput_page.dart';
 
 
 Map <String, WidgetBuilder> getApplicationRoutes(){
@@ -17,6 +18,8 @@ Map <String, WidgetBuilder> getApplicationRoutes(){
           'avatar':(BuildContext context) => AvatarPage(),
            'card':(BuildContext context) => CardPage(),
             'animated':(BuildContext context) => AnimationPage(),
+            'imput':(BuildContext context) => ImputPage(),
+
       };
 
 }

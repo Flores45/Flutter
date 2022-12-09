@@ -6,7 +6,8 @@
         'accessibility': Icons.accessibility,
         'folder_open'  : Icons.folder_open,
         'add_chart' :Icons.add_chart,
-        
+         'label_important_outline_rounded' :Icons.label_important_outline_rounded,
+
   };
 
 

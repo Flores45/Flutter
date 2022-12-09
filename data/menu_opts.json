@@ -20,6 +20,11 @@
             "ruta" : "animated",
             "icon" : "add_chart",
             "texto": "Cards - Animacion"
+        },
+        {
+            "ruta" : "imput",
+            "icon" : "label_important_outline_rounded",
+            "texto": "Imputs"
         }
 
     ]
