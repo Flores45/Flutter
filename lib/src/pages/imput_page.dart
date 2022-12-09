@@ -10,7 +10,9 @@ class ImputPage extends StatefulWidget {
 
 class _ImputPageState extends State<ImputPage> {
 
-  String _Nombre;
+  String _Nombre ='';
+  String _Email= '';
+  String _Password='';
 
 
   @override
@@ -24,7 +26,14 @@ class _ImputPageState extends State<ImputPage> {
         children: <Widget> [
           _crearImput(),
           Divider(),
-            _crearPersona(),
+          _crearEmail(),
+          Divider(),
+            _crearPassword(),
+                   Divider(),
+             _crearPersona(),
+         
+          
+
           
         ],
       ),
@@ -39,10 +48,10 @@ class _ImputPageState extends State<ImputPage> {
       border:OutlineInputBorder(
         borderRadius: BorderRadius.circular(10)
       ) ,
-      counter: Text("Letras ${_Nombre.length}"),
+      
       hintText: "Nombre de la persona",
       labelText: "Nombre",
-      helperText: "Ayuda",
+      //helperText: "Ayuda",
       suffixIcon: Icon(Icons.accessibility),
       icon: Icon(Icons.account_circle)
 
@@ -62,6 +71,70 @@ class _ImputPageState extends State<ImputPage> {
 
   return ListTile(
     title: Text('Nombre es: $_Nombre'),
+    subtitle: Text('Correo es: $_Password'),
+    
+    
   );
+
+
  }
+
+
+  Widget  _crearPassword() {
+
+  return TextField(
+   obscureText: true ,
+    decoration: InputDecoration(
+      border:OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10)
+      ) ,
+    
+      hintText: "Ingrese Su Contraseña",
+      labelText: "Password",
+      //helperText: "Ayuda",
+      suffixIcon: Icon(Icons.lock_open),
+      icon: Icon(Icons.password)
+
+    ),
+    onChanged: (valor) {
+      setState(() {
+         _Password = valor;
+      
+      });
+     
+    },
+  ); 
+
+ }
+  Widget _crearEmail() {
+      return TextField(
+    keyboardType: TextInputType.emailAddress,
+    decoration: InputDecoration(
+      border:OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10)
+      ) ,
+    
+      hintText: "Ingrese Su Correo",
+      labelText: "Correo",
+      //helperText: "Ayuda",
+      suffixIcon: Icon(Icons.alternate_email),
+      icon: Icon(Icons.email)
+
+    ),
+    onChanged: (valor) {
+      setState(() {
+         _Email = valor;
+      
+      });
+     
+    },
+  ); 
+  }
+  
+
+  
+
+ 
+
+ 
 }
