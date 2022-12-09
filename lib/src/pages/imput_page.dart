@@ -13,6 +13,10 @@ class _ImputPageState extends State<ImputPage> {
   String _Nombre ='';
   String _Email= '';
   String _Password='';
+  String _fecha ='';
+
+  TextEditingController _inputfieldDateController = new TextEditingController();
+
 
 
   @override
@@ -29,6 +33,8 @@ class _ImputPageState extends State<ImputPage> {
           _crearEmail(),
           Divider(),
             _crearPassword(),
+                   Divider(),
+                   _crearFecha(context),
                    Divider(),
              _crearPersona(),
          
@@ -73,9 +79,7 @@ class _ImputPageState extends State<ImputPage> {
     title: Text('Nombre es: $_Nombre'),
     subtitle: Text('Correo es: $_Password'),
     
-    
   );
-
 
  }
 
@@ -129,6 +133,45 @@ class _ImputPageState extends State<ImputPage> {
      
     },
   ); 
+  }
+  
+  Widget _crearFecha(BuildContext context) {
+    return TextField(
+   enableInteractiveSelection: false,
+   controller: _inputfieldDateController,
+    decoration: InputDecoration(
+      border:OutlineInputBorder(
+        borderRadius: BorderRadius.circular(10)
+      ) ,
+    
+      hintText: "Fecha De Nacimiento",
+      labelText: "Fecha De Nacimiento",
+      //helperText: "Ayuda",
+      suffixIcon: Icon(Icons.calendar_month), 
+      icon: Icon(Icons.data_array)
+
+    ),
+      onTap: (() {
+        FocusScope.of(context).requestFocus(new FocusNode());
+        _selectDate(context);
+      }),
+  ); 
+    
+  }
+  
+   _selectDate(BuildContext context) async {
+    DateTime picked  = await showDatePicker(
+      context: context,
+      initialDate: new DateTime.now(),
+      firstDate: new DateTime(2014),
+      lastDate: new DateTime(2025),
+    );
+    if(picked != null){
+      setState(() {
+        _fecha = picked.toString();
+        _inputfieldDateController.text=_fecha;
+      });
+    }
   }
   
 
